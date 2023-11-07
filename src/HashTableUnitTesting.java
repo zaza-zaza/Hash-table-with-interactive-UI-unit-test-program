@@ -11,8 +11,8 @@ public class HashTableUnitTesting {
 		
 		Scanner s = new Scanner(System.in);
 		boolean terminate = true;
-
-		System.out.println("The typing parameters for the unit test take integers ");
+	// creating menu for UI
+	System.out.println("The typing parameters for the unit test take integers ");
     	System.out.println("as keys and strings as values");
     	System.out.println("Here is a list of commands you to choose from.");
     	System.out.println("Be sure to replace 'key' and 'value' with desired input.");
@@ -32,7 +32,7 @@ public class HashTableUnitTesting {
             switch (command[0].toLowerCase()) {
 
                 case "put":
-                	
+                	// checks if the value entered is parsable to an integer
                 	try {
                 		ht.put(Integer.parseInt(command[1]), command[2]);
                 		System.out.println("assigning " + command[1] + " to " + command[2]);
@@ -43,10 +43,9 @@ public class HashTableUnitTesting {
                     break;
                     
                 case "get":
-                	
+                	// catches input error
                 	try {
                 		System.out.println("getting " + ht.get(Integer.parseInt(command[1])));
-
                 	} catch (NumberFormatException e) {
                 		System.out.println("Incorrect type.");
                 	}
